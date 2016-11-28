@@ -51,13 +51,6 @@ public class Bootstrapper
                 _vertx.eventBus()
                       .registerDefaultCodec(SomeBean.class, new KryoCodec<>(SomeBean.class));
 
-                Hazelcast.getAllHazelcastInstances()
-                         .forEach(instance -> {
-                             LoggingService loggingService = instance.getLoggingService();
-
-                         });
-
-
                 Buffer buffer = _vertx.fileSystem()
                                       .readFileBlocking("src/main/resources/" + profile + "-config.json");
                 JsonObject json = new JsonObject(buffer.toString());
