@@ -1,0 +1,4 @@
+{
+  "http.port": 8280,
+  "hazelcast.logging.type": "slf4j"
+}
